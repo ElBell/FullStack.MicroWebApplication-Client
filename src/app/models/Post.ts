@@ -1,4 +1,5 @@
 import {Comments} from './Comments';
+import {User} from "./User";
 
 export class Post {
   constructor(
@@ -9,7 +10,7 @@ export class Post {
     public createdDate: Date,
     public comments: Comments[],
     public tagsSet: any[],
-    public creator: {},
+    public creator: User,
     public myFile: string /* property of File type */
   ) {
   }
