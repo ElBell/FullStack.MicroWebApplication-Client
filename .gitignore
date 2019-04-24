@@ -1,7 +1,9 @@
 .idea
 
 /node_modules
-!/node_modules/bootstrap
 npm-debug.log
 .DS_Store
 /*.env
+
+!.gitignore
+!node_modules/bootstrap
