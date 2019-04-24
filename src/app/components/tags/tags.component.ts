@@ -15,7 +15,7 @@ export class TagsComponent implements OnInit {
   public filteredPost: any[];
   public showing: boolean;
 
-  constructor(private tagService: TagService) { }
+  constructor(public tagService: TagService) { }
   @Output() deleteTag: EventEmitter<Tags> = new EventEmitter();
 
 
@@ -52,7 +52,7 @@ export class TagsComponent implements OnInit {
     this.getPosts();
   }
 
-  private getPosts() {
+  public getPosts() {
     if (this.filteredTagList.length === 0 ) {
       this.filteredPost = this.totalPosts; this.filter.emit(this.filteredPost);
     } else {

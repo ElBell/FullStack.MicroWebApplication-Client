@@ -12,7 +12,7 @@ export class UsersPostsComponent implements OnInit {
   public user = {name: ''};
   public comments;
 
-  constructor(private userId: ActivatedRoute, private blogApiService: BlogApiService) { }
+  constructor(public userId: ActivatedRoute, public blogApiService: BlogApiService) { }
 
   ngOnInit() {
     this.getUser(this.userId);

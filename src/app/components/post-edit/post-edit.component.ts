@@ -10,14 +10,14 @@ import {TagService} from '../../services/tag.service';
   styleUrls: ['./post-edit.component.css']
 })
 export class PostEditComponent implements OnInit {
-  private model = new Post(null, null, null, null, null, null, null,
+  public model = new Post(null, null, null, null, null, null, null,
     {name: localStorage.getItem('username')}, null);
-  private creator = localStorage.getItem('username');
+  public creator = localStorage.getItem('username');
   public tags = [{tagName: 'testing'}];
   selectedFile: File;
 
-  constructor(private postId: ActivatedRoute, private blogApiService: BlogApiService,
-              public router: Router, private tagService: TagService) { }
+  constructor(public postId: ActivatedRoute, public blogApiService: BlogApiService,
+              public router: Router, public tagService: TagService) { }
 
   ngOnInit() {
     this.getPost(this.postId);

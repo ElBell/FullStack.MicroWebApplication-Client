@@ -10,7 +10,7 @@ export class OpeningPageComponent implements OnInit {
   public totalPosts: any[];
   public posts: any[];
 
-  constructor(private blogApiService: BlogApiService) { }
+  constructor(public blogApiService: BlogApiService) { }
 
   ngOnInit() {
     this.getPosts();

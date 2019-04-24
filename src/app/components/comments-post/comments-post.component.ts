@@ -10,7 +10,7 @@ export class CommentsPostComponent implements OnInit {
   public  comment;
   public post;
 
-  constructor(private commentId: ActivatedRoute, private blogApiService: BlogApiService) { }
+  constructor(public commentId: ActivatedRoute, public blogApiService: BlogApiService) { }
 
   ngOnInit() {
     this.getComments(this.post.getId());

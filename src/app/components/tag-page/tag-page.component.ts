@@ -9,16 +9,16 @@ import {TagService} from '../../services/tag.service';
 })
 export class TagPageComponent implements OnInit {
 
-  private tag = {tagName: ''};
-  private posts = [];
+  public tag = {tagName: ''};
+  public posts = [];
 
-  constructor(private tagId: ActivatedRoute, private tagService: TagService) { }
+  constructor(public tagId: ActivatedRoute, public tagService: TagService) { }
 
   ngOnInit() {
     this.getTag(this.tagId);
   }
 
-  private getTag(tagId) {
+  public getTag(tagId) {
     this.tagService.getTag(tagId.params.value.id).subscribe(
       (data: any) => { this.tag = data; this.posts = data.listOfPosts; }
     );

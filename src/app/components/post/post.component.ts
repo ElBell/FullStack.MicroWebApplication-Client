@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {BlogApiService} from '../../services/blog.api.service';
 import {Post} from '../../models/Post';
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-post',
@@ -10,11 +11,11 @@ import {Post} from '../../models/Post';
 })
 export class PostComponent implements OnInit {
   public post = new Post(null, null, null, null, null, null,
-    null, {id: null, name: ''}, null);
+    null, new User(null, null), null);
   public tags;
   public imageUrl = '../../assets/images/defaultBackground.jpeg';
 
-  constructor(private postId: ActivatedRoute, private blogApiService: BlogApiService) { }
+  constructor(public postId: ActivatedRoute, public blogApiService: BlogApiService) { }
 
   ngOnInit() {
     this.getPost(this.postId);
@@ -36,7 +37,7 @@ export class PostComponent implements OnInit {
     );
   }
 
-  private setImage(myFile: string) {
+  public setImage(myFile: string) {
     if (myFile !== null) {
       this.imageUrl = 'server/downloadFile/' + myFile;
     }

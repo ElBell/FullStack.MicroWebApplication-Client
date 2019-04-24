@@ -10,7 +10,7 @@ export class YourPostsComponent implements OnInit {
 
   public posts;
 
-  constructor(private userListService: BlogApiService) { }
+  constructor(public userListService: BlogApiService) { }
 
   ngOnInit() {
     setTimeout(() => {

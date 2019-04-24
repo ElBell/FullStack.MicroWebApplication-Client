@@ -10,13 +10,13 @@ import {Post} from '../../models/Post';
   styleUrls: ['./comment-edit.component.css']
 })
 export class CommentEditComponent implements OnInit {
-  private model = new Comments(null, null, null, null, null);
-  private post;
-  private  comment;
-  private user = true;
-  private deleted = false;
+  public model = new Comments(null, null, null, null, null);
+  public post;
+  public  comment;
+  public user = true;
+  public deleted = false;
 
-  constructor(private postId: ActivatedRoute, private blogApiService: BlogApiService, public router: Router) { }
+  constructor(public postId: ActivatedRoute, public blogApiService: BlogApiService, public router: Router) { }
 
   ngOnInit() {
     this.getComment(this.comment.commentId);

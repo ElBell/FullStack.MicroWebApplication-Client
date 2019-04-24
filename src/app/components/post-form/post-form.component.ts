@@ -16,7 +16,7 @@ export class PostFormComponent implements OnInit {
 
   selectedFile: File;
 
-  constructor(public router: Router, private blogApiService: BlogApiService, private tagService: TagService) {}
+  constructor(public router: Router, public blogApiService: BlogApiService, public tagService: TagService) {}
 
   ngOnInit() {
     this.getTags();

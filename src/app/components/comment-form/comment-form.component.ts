@@ -9,12 +9,12 @@ import {BlogApiService} from '../../services/blog.api.service';
   styleUrls: ['./comment-form.component.css']
 })
 export class CommentFormComponent implements OnInit {
-  private post;
-  private showing = false;
-  private comments = [];
-  private model = new Comments(null, null, null, null, null);
-  private creator = localStorage.getItem('username');
-  constructor(private postId: ActivatedRoute, private blogApiService: BlogApiService) { }
+  public post;
+  public showing = false;
+  public comments = [];
+  public model = new Comments(null, null, null, null, null);
+  public creator = localStorage.getItem('username');
+  constructor(public postId: ActivatedRoute, public blogApiService: BlogApiService) { }
 
   ngOnInit() {
    this.setPost(this.postId);

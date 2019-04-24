@@ -10,7 +10,7 @@ import {AuthService} from '../../services/auth.service';
 export class UsersComponent implements OnInit {
   public users;
 
-  constructor(private userListService: BlogApiService, private authService: AuthService) { }
+  constructor(public userListService: BlogApiService, public authService: AuthService) { }
 
   ngOnInit() {
     this.getUsers();

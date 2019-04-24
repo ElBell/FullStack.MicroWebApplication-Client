@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  private postsList: any[];
+  public postsList: any[];
 
   @Input() set posts(value: any[]) {
     if (value !== undefined) {

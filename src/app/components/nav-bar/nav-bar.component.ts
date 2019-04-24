@@ -7,10 +7,10 @@ import {AuthService} from '../../services/auth.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  private isUserLoggedIn: boolean;
-  private userId;
+  public isUserLoggedIn: boolean;
+  public userId;
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
     setTimeout( () => {this.isUserLoggedIn = this.authService.isAuthenticated();

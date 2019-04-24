@@ -23,7 +23,7 @@ export class TagFormComponent implements OnInit {
     this.submitted = true;
   }
 
-  constructor(private tagService: TagService) { }
+  constructor(public tagService: TagService) { }
 
   ngOnInit() {
   }
