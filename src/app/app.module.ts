@@ -24,7 +24,6 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { YourPostsComponent } from './components/your-posts/your-posts.component';
 import {MatButtonModule, MatCheckboxModule, MatIconModule, MatNavList, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CommentEditComponent } from './components/comment-edit/comment-edit.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TagPageComponent } from './components/tag-page/tag-page.component';
 
@@ -47,7 +46,6 @@ import { TagPageComponent } from './components/tag-page/tag-page.component';
     PostListComponent,
     YourPostsComponent,
     CommentFormComponent,
-    CommentEditComponent,
     TagPageComponent
   ],
   imports: [

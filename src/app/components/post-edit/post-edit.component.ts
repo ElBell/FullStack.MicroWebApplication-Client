@@ -3,6 +3,7 @@ import {BlogApiService} from '../../services/blog.api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Post} from '../../models/Post';
 import {TagService} from '../../services/tag.service';
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-post-edit',
@@ -11,7 +12,7 @@ import {TagService} from '../../services/tag.service';
 })
 export class PostEditComponent implements OnInit {
   public model = new Post(null, null, null, null, null, null, null,
-    {name: localStorage.getItem('username')}, null);
+    new User(Number(localStorage.getItem('userid')), localStorage.getItem('username')), null);
   public creator = localStorage.getItem('username');
   public tags = [{tagName: 'testing'}];
   selectedFile: File;

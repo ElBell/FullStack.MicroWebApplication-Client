@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class PostFormComponent implements OnInit {
 
-  public model = new Post(null, '', '', '', new Date(), null, [], '', null);
+  public model = new Post(null, '', '', '', new Date(), null, [], null, null);
   public tags = [{tagName: 'testing'}];
 
   selectedFile: File;
@@ -42,7 +42,7 @@ export class PostFormComponent implements OnInit {
   }
 
   newPost() {
-    this.model = new Post(null, '', '', '', new Date(), null, null, '', null);
+    this.model = new Post(null, '', '', '', new Date(), null, null, null, null);
   }
 }
 
