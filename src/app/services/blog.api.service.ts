@@ -17,7 +17,7 @@ export class BlogApiService {
 
   signUp() {
     const token = localStorage.getItem('access_token');
-    return this.http.post('server/users/sign-up', localStorage.getItem('id_token'),
+    return this.http.post('https://whatthethek-server.herokuapp.com/users/sign-up', localStorage.getItem('id_token'),
       {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)})
       .subscribe((data: any) => {
           localStorage.setItem('userid', data.id);
@@ -29,36 +29,36 @@ export class BlogApiService {
   }
 
   getUsers() {
-    return this.http.get('server/users',
+    return this.http.get('https://whatthethek-server.herokuapp.com/users',
       {headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token'))});
   }
 
   getUserById(userId: string) {
-    return this.http.get('server/users/id/' + userId);
+    return this.http.get('https://whatthethek-server.herokuapp.com/users/id/' + userId);
   }
 
   getPosts() {
-    return this.http.get('https://whatthethek-server.herokuapp.com/post');
+    return this.http.get('https://whatthethek-https://whatthethek-server.herokuapp.com.herokuapp.com/post');
   }
 
   getPostsByUser(userId: string) {
-    const url = 'server/users/posts/' + userId;
+    const url = 'https://whatthethek-server.herokuapp.com/users/posts/' + userId;
     return this.http.get(url);
   }
 
   getPostById(postId: string) {
-    const url = 'server/post/' + postId;
+    const url = 'https://whatthethek-server.herokuapp.com/post/' + postId;
     return this.http.get(url);
   }
 
   getPostTags(postId: string) {
-    const url = 'server/post/tags/' + postId;
+    const url = 'https://whatthethek-server.herokuapp.com/post/tags/' + postId;
     return this.http.get(url);
   }
 
   createPost(post: Post) {
     console.log(localStorage.getItem('access_token'));
-    return this.http.post('server/users/createPost/' + localStorage.getItem('id_token'), JSON.stringify(post), httpOptions)
+    return this.http.post('https://whatthethek-server.herokuapp.com/users/createPost/' + localStorage.getItem('id_token'), JSON.stringify(post), httpOptions)
       .subscribe(data => {
           console.log(data);
         },
@@ -68,7 +68,7 @@ export class BlogApiService {
   }
 
   deletePost(postID) {
-    this.http.delete('server/users/deletePost/' + postID,
+    this.http.delete('https://whatthethek-server.herokuapp.com/users/deletePost/' + postID,
       {headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token'))})
       .subscribe(data => {
           console.log(data);
@@ -79,7 +79,7 @@ export class BlogApiService {
   }
 
   updatePost(post: Post) {
-    this.http.put('server/users/updatePost/' + post.postID, JSON.stringify(post), httpOptions)
+    this.http.put('https://whatthethek-server.herokuapp.com/users/updatePost/' + post.postID, JSON.stringify(post), httpOptions)
       .subscribe(data => {
           console.log(data);
         },
@@ -91,7 +91,7 @@ export class BlogApiService {
   createComment(comment: Comments) {
     const token = localStorage.getItem('access_token');
     console.log(JSON.stringify(comment));
-    this.http.post('server/comment/create/' + localStorage.getItem('id_token'), JSON.stringify(comment),
+    this.http.post('https://whatthethek-server.herokuapp.com/comment/create/' + localStorage.getItem('id_token'), JSON.stringify(comment),
       {headers: new HttpHeaders({'Content-Type': 'application/json'}).set('Authorization', 'Bearer ' + token)})
       .subscribe(data => {
           console.log(data);
@@ -102,12 +102,12 @@ export class BlogApiService {
   }
 
   getCommentsByPost(postId: number) {
-    const url = 'server/comments/post/' + postId;
+    const url = 'https://whatthethek-server.herokuapp.com/comments/post/' + postId;
     return this.http.get(url);
   }
 
   deleteComment(commentId) {
-    this.http.delete('server/comment/delete/' + commentId, httpOptions)
+    this.http.delete('https://whatthethek-server.herokuapp.com/comment/delete/' + commentId, httpOptions)
       .subscribe(data => {
           console.log(data);
         },
@@ -117,7 +117,7 @@ export class BlogApiService {
   }
 
   updateComment(comment: Comments) {
-    this.http.put('server/comment/update/' + comment.commentId, JSON.stringify(comment), httpOptions)
+    this.http.put('https://whatthethek-server.herokuapp.com/comment/update/' + comment.commentId, JSON.stringify(comment), httpOptions)
       .subscribe(data => {
           console.log(data);
         },
@@ -128,12 +128,12 @@ export class BlogApiService {
   }
 
   getCommentsByUser(userId) {
-    const url = 'server/users/comments/' + userId;
+    const url = 'https://whatthethek-server.herokuapp.com/users/comments/' + userId;
     return this.http.get(url);
   }
 
   uploadImage(myFile: FormData) {
-    const url = 'server/uploadFile';
+    const url = 'https://whatthethek-server.herokuapp.com/uploadFile';
     return this.http.post(url, myFile)
       .subscribe(data => {
           console.log(data);

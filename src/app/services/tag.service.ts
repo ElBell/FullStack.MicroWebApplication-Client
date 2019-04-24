@@ -27,16 +27,16 @@ export class TagService {
   }
 
   findAllTags() {
-    return this.http.get('server/tags');
+    return this.http.get('https://whatthethek-server.herokuapp.com/tags');
   }
 
   findFilteredPostsByTag(tagNames: string[]) {
-    const url = 'server/tags/filteredPosts/' + tagNames;
+    const url = 'https://whatthethek-server.herokuapp.com/tags/filteredPosts/' + tagNames;
     return this.http.get(url);
   }
 
   createTags(tag: Tags) {
-    this.http.post('server/createTag', JSON.stringify(tag),
+    this.http.post('https://whatthethek-server.herokuapp.com/createTag', JSON.stringify(tag),
       httpOptions).subscribe(data => {console.log(data); },
       err => console.log('error'));
   }
@@ -45,7 +45,7 @@ export class TagService {
   // }
 
   updateTags(id: number, tag: Tags) {
-    const url = 'server/updateTag/${id}';
+    const url = 'https://whatthethek-server.herokuapp.com/updateTag/${id}';
     return this.http.put(url, id, httpOptions).pipe(
       tap(_ => console.log('updated tag id=${id}')),
       catchError(this.handleError<any>('updateTag'))
@@ -53,19 +53,19 @@ export class TagService {
   }
   //
   // deleteTags(id): Observable<Tag> {
-  //   const url = `server/tags/${id}`;
+  //   const url = `https://whatthethek-server.herokuapp.com/tags/${id}`;
   //   return this.http.delete<Tag>(url, httpOptions).pipe(
   //     tap(_ => console.log(`deleted tag id =${id}`)),
   //     catchError(this.handleError<Tag>('deleteTag'))
   //   );
   deleteTags(tagName: string) {
-    const url = 'server/deleteTags/' + tagName;
+    const url = 'https://whatthethek-server.herokuapp.com/deleteTags/' + tagName;
     return this.http.delete(url, httpOptions).subscribe(data => {console.log(data); },
       err => console.log('error'));
   }
 
   getTag(tagId) {
-    const url = 'server/tags/' +  tagId;
+    const url = 'https://whatthethek-server.herokuapp.com/tags/' +  tagId;
     return this.http.get(url);
   }
 }

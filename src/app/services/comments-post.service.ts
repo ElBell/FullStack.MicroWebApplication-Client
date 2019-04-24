@@ -17,14 +17,14 @@ export class CommentsPostService {
   }
 
   getCommentsByPost(postId: number) {
-    const url = 'server/comments/post/' + postId;
+    const url = 'https://whatthethek-server.herokuapp.com/comments/post/' + postId;
     return this.http.get(url);
   }
 
   createComment(comment: Comments) {
     const token = localStorage.getItem('access_token');
     console.log(JSON.stringify(comment));
-    this.http.post('server/comment/create/' + localStorage.getItem('id_token'), JSON.stringify(comment),
+    this.http.post('https://whatthethek-server.herokuapp.com/comment/create/' + localStorage.getItem('id_token'), JSON.stringify(comment),
       {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)})
       .subscribe(data => {
           console.log(data);
@@ -35,7 +35,7 @@ export class CommentsPostService {
   }
 
   // deleteComment(comment: Comments) {
-  //   this.http.delete('server/comment/delete/' + comment.commentId, httpOptions)
+  //   this.http.delete('https://whatthethek-server.herokuapp.com/comment/delete/' + comment.commentId, httpOptions)
   //     .subscribe(data => {
   //         console.log(data);
   //       },
@@ -45,7 +45,7 @@ export class CommentsPostService {
   // }
   //
   // updateComment(comment: Comments) {
-  //   this.http.put('server/comment/update/' + comment.commentId, JSON.stringify(comment), httpOptions)
+  //   this.http.put('https://whatthethek-server.herokuapp.com/comment/update/' + comment.commentId, JSON.stringify(comment), httpOptions)
   //     .subscribe(data => {
   //         console.log(data);
   //       },
