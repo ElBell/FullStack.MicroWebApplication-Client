@@ -55,7 +55,6 @@ export class AuthService {
     this.auth0.logout({
       returnTo: 'https://whatthetek-client.herokuapp.com/'
     });
-    // window.location.href = 'https://whatthetek.auth0.com/v2/logout';
   }
 
   public isAuthenticated(): boolean {
