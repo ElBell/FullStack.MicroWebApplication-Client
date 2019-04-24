@@ -11,7 +11,7 @@ export class AuthService {
     domain: 'whatthetek.auth0.com',
     responseType: 'token id_token',
     audience: 'http://localhost:8080',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'https://whatthetek-client.herokuapp.com/callback',
     scope: 'profile openid view:user view:users'
   });
 
@@ -53,7 +53,7 @@ export class AuthService {
     localStorage.removeItem('username');
     // Go back to the home route
     this.auth0.logout({
-      returnTo: 'http://localhost:4200/'
+      returnTo: 'https://whatthetek-client.herokuapp.com/'
     });
     // window.location.href = 'https://whatthetek.auth0.com/v2/logout';
   }
