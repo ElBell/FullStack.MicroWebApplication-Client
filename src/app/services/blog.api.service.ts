@@ -18,7 +18,7 @@ export class BlogApiService {
   signUp() {
     const token = localStorage.getItem('access_token');
     return this.http.post('https://whatthethek-server.herokuapp.com/users/sign-up', localStorage.getItem('id_token'),
-      {headers: new HttpHeaders().set('authorization', 'Bearer ' + token)})
+      {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token).set('Access-Control-Allow-Origin', '*')})
       .subscribe((data: any) => {
           localStorage.setItem('userid', data.id);
           localStorage.setItem('username', data.name);
@@ -31,7 +31,7 @@ export class BlogApiService {
   getUsers() {
       console.log(localStorage.getItem('access_token'));
     return this.http.get('https://whatthethek-server.herokuapp.com/users',
-      {headers: new HttpHeaders().set('authorization', 'Bearer ' + localStorage.getItem('access_token'))});
+      {headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token')).set('Access-Control-Allow-Origin', '*')});
   }
 
   getUserById(userId: string) {
