@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cors());
+app.use(cors());
 
 // Run the app by serving the static files
 // in the dist directory
