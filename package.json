@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js --proxy-config proxy.conf.json",
+    "start": "node server.js --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -31,6 +31,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "font-awesome": "^4.7.0",
+    "http-proxy-middleware": "^0.19.1",
     "jquery": "^3.4.0",
     "jsonwebtoken": "^8.5.1",
     "path": "^0.12.7",
