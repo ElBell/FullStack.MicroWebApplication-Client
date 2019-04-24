@@ -38,7 +38,7 @@ export class BlogApiService {
   }
 
   getPosts() {
-    return this.http.get('server/post');
+    return this.http.get('https://whatthethek-server.herokuapp.com/post');
   }
 
   getPostsByUser(userId: string) {

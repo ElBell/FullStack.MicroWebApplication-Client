@@ -5,5 +5,4 @@ npm-debug.log
 .DS_Store
 /*.env
 
-!.gitignore
-!node_modules/bootstrap
+!/node_modules/bootstrap/
