@@ -39,7 +39,7 @@ export class PostComponent implements OnInit {
 
   public setImage(myFile: string) {
     if (myFile !== null) {
-      this.imageUrl = 'https://whatthethek-https://whatthethek-server.herokuapp.com.herokuapp.com/downloadFile/' + myFile;
+      this.imageUrl = 'https://whatthethek-server.herokuapp.com/downloadFile/' + myFile;
     }
   }
 }
